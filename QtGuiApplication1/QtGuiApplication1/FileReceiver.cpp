@@ -13,7 +13,7 @@ void SingleFileReceiver::run()
 		unsigned int fileLength;
 		string fileName = (char*)&RevData[12];
 		string fullPath = saveFlod + fileName;
-		emit begin(QString::fromStdString(fullPath));
+		emit begin(QString::fromLocal8Bit(fullPath.c_str()));
 		string tempfile = fullPath;
 		tempfile.replace(tempfile.begin() + tempfile.find_last_of('.'), tempfile.end(), ".tmp");
 		memcpy_s(&fileLength, 4, &RevData[4], 4);
@@ -170,6 +170,10 @@ void FilesReceiver::StopReceiving()
 	SingleFileReceiver::stop = true;
 	threadpool.clear();
 	threadpool.waitForDone();
+}
+
+void FilesReceiver::BeginReceiving()
+{
 	SingleFileReceiver::stop = false;
 }
 

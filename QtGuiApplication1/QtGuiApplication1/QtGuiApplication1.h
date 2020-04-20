@@ -21,8 +21,9 @@ private:
 	Ui::QtGuiApplication1Class ui;
 	QThread receiveFiles;
 	QThread sendFiles;
+	bool recvState = true;
 public slots:
-	void StopReceiving();
+	void ChangeRecvState();
 	void showFileList();
 	void ShowSendingMsg(unsigned short id, QString msg);
 	void ShowRecvingMsg(QString filePath);
@@ -34,4 +35,6 @@ public slots:
 signals:
 	void BeginSending(QString basepath, QStringList filename, QString IPaddress);
 	void updateRecvFloder(QString floder);
+	void StopRecv();
+	void BeginRecv();
 };

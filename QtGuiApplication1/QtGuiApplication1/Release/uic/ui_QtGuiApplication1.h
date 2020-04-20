@@ -58,12 +58,12 @@ public:
     {
         if (QtGuiApplication1Class->objectName().isEmpty())
             QtGuiApplication1Class->setObjectName(QString::fromUtf8("QtGuiApplication1Class"));
-        QtGuiApplication1Class->resize(610, 400);
+        QtGuiApplication1Class->resize(600, 400);
         centralWidget = new QWidget(QtGuiApplication1Class);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 0, 611, 351));
+        tabWidget->setGeometry(QRect(0, 0, 601, 351));
         send = new QWidget();
         send->setObjectName(QString::fromUtf8("send"));
         tableWidget = new QTableWidget(send);
@@ -89,7 +89,7 @@ public:
         label->setGeometry(QRect(460, 142, 72, 16));
         layoutWidget = new QWidget(send);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(460, 10, 143, 51));
+        layoutWidget->setGeometry(QRect(460, 10, 131, 51));
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -132,7 +132,7 @@ public:
         pushButton->setGeometry(QRect(460, 250, 131, 23));
         layoutWidget_2 = new QWidget(recv);
         layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(460, 10, 143, 51));
+        layoutWidget_2->setGeometry(QRect(460, 10, 131, 51));
         gridLayout_2 = new QGridLayout(layoutWidget_2);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -157,7 +157,7 @@ public:
         QtGuiApplication1Class->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QtGuiApplication1Class);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 610, 23));
+        menuBar->setGeometry(QRect(0, 0, 600, 23));
         QtGuiApplication1Class->setMenuBar(menuBar);
         mainToolBar = new QToolBar(QtGuiApplication1Class);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));

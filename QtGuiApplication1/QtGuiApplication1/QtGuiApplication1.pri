@@ -7,12 +7,14 @@
 message("You are running qmake on a generated .pro file. This may not work!")
 
 
-HEADERS += ./QtGuiApplication1.h \
+HEADERS += ./md5.h \
+    ./QtGuiApplication1.h \
     ./FileReceiver.h \
     ./FileSender.h
 SOURCES += ./FileReceiver.cpp \
     ./FileSender.cpp \
     ./main.cpp \
+    ./md5.cpp \
     ./QtGuiApplication1.cpp
 FORMS += ./QtGuiApplication1.ui
 RESOURCES += QtGuiApplication1.qrc

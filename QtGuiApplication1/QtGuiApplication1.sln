@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29905.134
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtGuiApplication1", "QtGuiApplication1\QtGuiApplication1.vcxproj", "{2E85AFA2-6D65-43AC-998C-B232B1B8F32D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtGuiApplication1", "QtGuiApplication1\QtGuiApplication1.vcxproj", "{91F3453E-9023-4F41-A7E0-90C6CE29C501}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E85AFA2-6D65-43AC-998C-B232B1B8F32D}.Debug|x86.ActiveCfg = Debug|Win32
-		{2E85AFA2-6D65-43AC-998C-B232B1B8F32D}.Debug|x86.Build.0 = Debug|Win32
-		{2E85AFA2-6D65-43AC-998C-B232B1B8F32D}.Release|x86.ActiveCfg = Release|Win32
-		{2E85AFA2-6D65-43AC-998C-B232B1B8F32D}.Release|x86.Build.0 = Release|Win32
+		{91F3453E-9023-4F41-A7E0-90C6CE29C501}.Debug|x86.ActiveCfg = Debug|Win32
+		{91F3453E-9023-4F41-A7E0-90C6CE29C501}.Debug|x86.Build.0 = Debug|Win32
+		{91F3453E-9023-4F41-A7E0-90C6CE29C501}.Release|x86.ActiveCfg = Release|Win32
+		{91F3453E-9023-4F41-A7E0-90C6CE29C501}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F1D489FC-50AC-467E-81C3-4F0F9430C456}
+		SolutionGuid = {8DD983F2-5362-4EBD-ACEE-798F874C34D0}
 	EndGlobalSection
 EndGlobal

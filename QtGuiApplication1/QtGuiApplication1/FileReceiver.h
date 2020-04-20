@@ -31,6 +31,7 @@ public slots:
 	void ReceiveSingleFile(SOCKET socket);
 	void StopReceiving();
 	void updateRecvFloder(QString floder);
+	void BeginReceiving();
 private:
 	Listener* listener = new Listener;
 	QThreadPool threadpool;

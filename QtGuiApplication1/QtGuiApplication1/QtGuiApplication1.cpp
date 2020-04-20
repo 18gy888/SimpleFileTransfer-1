@@ -13,6 +13,9 @@ QtGuiApplication1::QtGuiApplication1(QWidget* parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	QRegExp regExp("\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}:\\d{1,5}");
+	ui.lineEdit->setValidator(new QRegExpValidator(regExp, this));
+
 	FilesReceiver* fr = new FilesReceiver;
 	FilesSender* fs = new FilesSender;
 	fr->moveToThread(&receiveFiles);
@@ -20,7 +23,9 @@ QtGuiApplication1::QtGuiApplication1(QWidget* parent)
 	fs->moveToThread(&sendFiles);
 
 	connect(ui.pushButton, &QPushButton::clicked, this, &QtGuiApplication1::clearRecvTable);
-	connect(ui.pushButton_2, &QPushButton::clicked, fr, &FilesReceiver::StopReceiving);
+	connect(ui.pushButton_2, &QPushButton::clicked, this, &QtGuiApplication1::ChangeRecvState);
+	connect(this, &QtGuiApplication1::StopRecv, fr, &FilesReceiver::StopReceiving);
+	connect(this, &QtGuiApplication1::BeginRecv, fr, &FilesReceiver::BeginReceiving);
 	//connect(ui.pushButton_2, &QPushButton::clicked, fr, &FilesReceiver::StopListening);
 	connect(ui.pushButton_3, &QPushButton::clicked, this, &QtGuiApplication1::SendFiles);
 	connect(this, &QtGuiApplication1::BeginSending, fs, &FilesSender::BeginSending);
@@ -104,14 +109,6 @@ void QtGuiApplication1::SendFiles()
 	{
 		fileList << QDir::toNativeSeparators(ui.tableWidget->item(i, 0)->text());
 	}
-	if (ui.lineEdit->text()=="") {
-		QMessageBox::critical(this,"Error","Target IP and port input cannot be null!");
-		return;
-	}
-	else if (ui.lineEdit->text().indexOf(":") < 0) {
-		QMessageBox::critical(this, "Error", "Input format error, should enter \"destination IP : port number\"!");
-		return;
-	}
 	emit BeginSending(ui.lineEdit_2->text(), fileList, ui.lineEdit->text());
 }
 
@@ -133,9 +130,19 @@ void QtGuiApplication1::clearRecvTable()
 	ui.tableWidget_2->clear();
 }
 
-void QtGuiApplication1::StopReceiving()
+void QtGuiApplication1::ChangeRecvState()
 {
-
+	if (recvState)
+	{
+		emit StopRecv();
+		ui.pushButton_2->setText(QString::fromLocal8Bit("开始接收"));
+	}
+	else
+	{
+		emit BeginRecv();
+		ui.pushButton_2->setText(QString::fromLocal8Bit("停止接收"));
+	}
+	recvState = !recvState;
 }
 
 void QtGuiApplication1::InputIP()
